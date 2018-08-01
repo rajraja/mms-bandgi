@@ -1,0 +1,38 @@
+<div [@routerTransition]>
+    <div class="mt-10" *ngIf="gridData">
+      <table datatable [dtOptions]="dtOptions" class="dataTable row-border hover table-responsive">
+        <thead >
+          <tr>
+            <th class="pl-10" >
+                Borough
+            </th>
+            <th class="pl-10" >
+                Network Name
+            </th>
+            <th class="pl-10" >
+                Network ID
+            </th>
+            <th class="pl-10" >
+                Number of SOS Installed
+            </th>
+            <th class="pl-10" >
+                Number of Current SOS Alarms
+            </th>
+            <th class="pl-10" >
+                Number of All Alarms(historical)
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let val of gridData.installedDevicesCountByArea">
+            <td>{{ val.areaName }}</td>
+            <td>{{ val.subAreaName }}</td>
+            <td>{{ val.networkId }}</td>
+            <td>{{ val.installedDeviceCount }}</td>
+            <td>{{ val.activeAlarmsCount }}</td>
+            <td>{{ val.allAlarmsCount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

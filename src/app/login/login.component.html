@@ -1,0 +1,45 @@
+<div class="login-page" [@routerTransition]>
+    <div>
+        <ngx-spinner></ngx-spinner>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <img clas="" src="assets/images/cni-guard-white-logo.png" width="200px" height="70px"/>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-left">
+        <div class="col-md-4 m-5 p-5 bg-dark">
+            <!-- <img src="assets/images/logo.png" width="150px" class="user-avatar" /> -->
+            <h1>Log in to your account</h1>
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" [(ngModel)]="username" class="form-control input-underline" placeholder="Email" (mousedown)="onUserPasswordChange()">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" [(ngModel)]="password" class="form-control input-underline" placeholder="Password" (mousedown)="onUserPasswordChange()">
+                    </div>
+                    <div class="row" if="loginErrorMessage">
+                        <div class="col-md-12 text-danger">
+                            {{loginErrorMessage}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 text-danger">
+                        <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Log in </a>
+                    </div>
+                </div>
+
+
+                <!-- &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a> -->
+            </form>
+        </div>
+    </div>
+
+
+</div>

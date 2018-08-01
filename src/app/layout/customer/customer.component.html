@@ -1,0 +1,35 @@
+<div [@routerTransition]>
+  <div class="row mtd-5 text-light" style="background: #208abe">
+      <div class="col-md-3 p-2 font-italic">
+          Cutomer
+      </div>
+      <div class="col-md-2 text-center mt-1">
+          <span for="1" class="pl-3 pr-3 pb-1 r-5 bg-tlight-pink font-weight-bold fs-08">Sites: 345</span>
+      </div>
+      <div class="col-md-3 text-center mt-1">
+          <span for="2" class="pl-3 pr-3 pb-1 r-5 bg-tgreen font-weight-bold fs-08">Sensor No Location: 345</span>
+      </div>
+      <div class="col-md-2 text-center mt-1">
+          <span for="3" class="pl-3 pr-3 pb-1 r-5 bg-tpink font-weight-bold fs-08">Active Alarms: 345</span>
+      </div>
+      <div class="col-md-2 text-center mt-1">
+          <span for="4" class="pl-3 pr-3 pb-1 r-5 bg-dark font-weight-bold fs-08">Users: 34</span>
+      </div>
+  </div>
+<!-- tabs  -->
+<nav class="mt-1 fs-09 font-weight-bold">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+    <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#changeCustomer" role="tab" aria-controls="nav-profile" aria-selected="false" (click)="changeTheCustomer()">
+        Change Customer
+    </a>
+
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div *ngIf="isChangeCustomer" class="tab-pane fade" id="changeCustomer" role="tabpanel" aria-labelledby="nav-profile-tab">
+     <app-change-customer></app-change-customer>
+  </div>
+</div>
+<!-- end -->
+</div>

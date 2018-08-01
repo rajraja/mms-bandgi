@@ -1,0 +1,48 @@
+<div [@routerTransition]>
+    <div class="row mtd-5 text-light" style="background: #208abe">
+        <div class="col-md-3 p-2 font-italic">
+            Home
+        </div>
+        <div class="col-md-2 text-center mt-1">
+            <span for="1" class="pl-3 pr-3 pb-1 r-5 bg-tlight-pink font-weight-bold fs-08">Sites: 345</span>
+        </div>
+        <div class="col-md-3 text-center mt-1">
+            <span for="2" class="pl-3 pr-3 pb-1 r-5 bg-tgreen font-weight-bold fs-08">Sensor No Location: 345</span>
+        </div>
+        <div class="col-md-2 text-center mt-1">
+            <span for="3" class="pl-3 pr-3 pb-1 r-5 bg-tpink font-weight-bold fs-08">Active Alarms: 345</span>
+        </div>
+        <div class="col-md-2 text-center mt-1">
+            <span for="4" class="pl-3 pr-3 pb-1 r-5 bg-dark font-weight-bold fs-08">Users: 34</span>
+        </div>
+    </div>
+  <!-- tabs  -->
+  <nav class="mt-1 fs-09 font-weight-bold">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#alarmList" role="tab" aria-controls="nav-profile" [ngClass]="{'bg-dark': isAlarmList}"
+        aria-selected="false" (click)="alarmList()">ALARM LIST VIEW</a>
+
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#gridView" role="tab" aria-controls="nav-contact" [ngClass]="{'bg-tgreen': isGridView}"
+        aria-selected="false" (click)="gridView()">GRID VIEW</a>
+
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#deviceList" role="tab" aria-controls="nav-home" [ngClass]="{'bg-dark': isDeviceList}"
+        aria-selected="true" (click)="deviceList()">LIST VIEW</a>
+
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div *ngIf="isAlarmList" class="tab-pane fade" id="alarmList" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <app-alarm-list></app-alarm-list>
+    </div>
+
+    <div *ngIf="isGridView" class="tab-pane fade" id="gridView" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <app-grid-view></app-grid-view>
+    </div>
+
+    <div *ngIf="isDeviceList" class="tab-pane fade show active" id="deviceList" role="tabpanel" aria-labelledby="nav-home-tab">
+      <app-devicelist></app-devicelist>
+    </div>
+  </div>
+  <!-- end -->
+</div>

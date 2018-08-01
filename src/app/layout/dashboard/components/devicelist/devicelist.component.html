@@ -1,0 +1,56 @@
+<div [@routerTransition]>
+  <div class="mt-10" *ngIf="devices">
+    <table datatable [dtOptions]="dtOptions" class="dataTable row-border hover table-responsive">
+      <thead >
+        <tr>
+          <th class="pl-10">
+              View
+          </th> 
+          <th class="pl-10" >
+              {{devices.installedDevices.networkLabelsInfo.networkLabel}}
+          </th>
+          <th class="pl-10" >
+              {{devices.installedDevices.networkLabelsInfo.plateLabel}}
+          </th>
+          <th class="pl-10" >
+              {{devices.installedDevices.networkLabelsInfo.structureTypeLabel}}
+          </th>
+          <th class="pl-10" >
+              {{devices.installedDevices.networkLabelsInfo.structureNumberLabel}}
+          </th>
+          <th class="pl-10" >
+              Serial Number
+          </th>
+          <th class="pl-10" >
+              Device
+          </th>
+          <th class="pl-10" >
+              Rssi
+          </th>
+          <th class="pl-10" >
+              Hardware Notes
+          </th>
+          <th class="pl-10" >
+              Firmware Version
+          </th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let val of devices.installedDevices.locationDataInfo">
+          <td>view</td>
+          <td>{{ val.network }}</td>
+          <td>{{ val.msPlate }}</td>
+          <td>
+            <a >{{ val.structureType }}</a>
+          </td>
+          <td>{{ val.structureNumber }}</td>
+          <td>{{ val.serialNumber }}</td>
+          <td>{{ val.imeiNumber }}</td>
+          <td>{{ val.rssi }}</td>
+          <td>{{ val.hardwareNotes }}</td>
+          <td>{{ val.firmwareVersion }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

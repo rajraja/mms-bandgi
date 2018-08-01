@@ -1,0 +1,70 @@
+<div [@routerTransition]>
+    <div class="mt-10" *ngIf="alarms">
+      <table datatable [dtOptions]="dtOptions" class="dataTable row-border hover table-responsive">
+        <thead >
+          <tr>
+            <th class="pl-10">
+                View
+            </th> 
+            <th class="pl-10">
+                Select
+            </th> 
+            <th class="pl-10" >
+                {{alarms.activeAlarms.networkLabelsInfo.networkLabel}}
+            </th>
+            <th class="pl-10" >
+                {{alarms.activeAlarms.networkLabelsInfo.plateLabel}}
+            </th>
+            <th class="pl-10" >
+                {{alarms.activeAlarms.networkLabelsInfo.structureTypeLabel}}
+            </th>
+            <th class="pl-10" >
+                {{alarms.activeAlarms.networkLabelsInfo.structureNumberLabel}}
+            </th>
+            <th class="pl-10" >
+                Serial Number
+            </th>
+            <th class="pl-10" >
+                Device#
+            </th>
+            <th class="pl-10" >
+                Alarm Type
+            </th>
+            <th class="pl-10" >
+                Alarm State
+            </th>
+            <th class="pl-10" >
+                Alarm Time
+            </th>
+            <th class="pl-10" >
+                Alarm Reported Time
+            </th>
+            <th class="pl-10" >
+                Alarm Value
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let val of alarms.activeAlarms.alarmData">
+            <td>view</td>
+            <td>select</td>
+            <td>{{ val.network }}</td>
+            <td>{{ val.msPlate }}</td>
+            <td>
+              <a >{{ val.structureType }}</a>
+            </td>
+            <td>{{ val.structureNumber }}</td>
+            <td>{{ val.serialNumber }}</td>
+            <td>{{ val.imeiNumber }}</td>
+            <td>{{ val.sensorDisplayName }}</td>
+            <td>{{ val.alarmStateDesription }}</td>
+            <td>{{ val.alarmTime }}</td>
+            <td>{{ val.alarmReportedTime }}</td>
+            <td class="bt_width_12" ng-class="val.levelColour === 'YELLOW' ? 'level-yellow' : 'level-red'">
+                <span>{{ val.alarmValue }} {{val.sensorUnits}}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
